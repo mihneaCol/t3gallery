@@ -1,12 +1,19 @@
 import "~/styles/globals.css";
 import "@uploadthing/react/styles.css";
 
+import { Inter } from "next/font/google";
+
 import { ClerkProvider } from "@clerk/nextjs";
 import { TopNav } from "./_components/topnav";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { GeistSans } from "geist/font/sans";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "~/app/api/uploadthing/core";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata = {
   title: "T3 Gallery",
@@ -26,7 +33,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" className={`${GeistSans.variable}`}>
-        <body className="flex flex-col gap-4">
+        <body className={`font-sans ${inter.variable} dark`}>
           <NextSSRPlugin
             /**
              * The `extractRouterConfig` will extract **only** the route configs

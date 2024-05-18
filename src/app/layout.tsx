@@ -4,10 +4,9 @@ import "@uploadthing/react/styles.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { TopNav } from "./_components/topnav";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { GeistSans } from "geist/font/sans";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
-
-import { GeistSans } from "geist/font/sans";
 
 export const metadata = {
   title: "T3 Gallery",
@@ -33,6 +32,7 @@ export default function RootLayout({
              * leaked to the client. The data passed to the client is the same
              * as if you were to fetch `/api/uploadthing` directly.
              */
+            // routerConfig={extractRouterConfig(ourFileRouter)}
             routerConfig={extractRouterConfig(ourFileRouter)}
           />
           <TopNav />

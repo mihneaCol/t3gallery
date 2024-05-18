@@ -6,7 +6,7 @@ import { TopNav } from "./_components/topnav";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { GeistSans } from "geist/font/sans";
 import { extractRouterConfig } from "uploadthing/server";
-import { ourFileRouter } from "./api/uploadthing/core";
+import { ourFileRouter } from "~/app/api/uploadthing/core";
 
 export const metadata = {
   title: "T3 Gallery",
